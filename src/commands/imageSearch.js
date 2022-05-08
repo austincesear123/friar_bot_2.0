@@ -4,7 +4,7 @@ const imageSearch = require("image-search-google");
 const client = new imageSearch(process.env.CSE_ID, process.env.API_KEY);
 const options = { page: 1 };
 
-function imageSearch() {
+function randomImage() {
   client
     .search("Fernando Tatis Jr Padres", options)
     .then(
@@ -21,4 +21,4 @@ function imageSearch() {
     .catch((error) => console.log(error));
 }
 
-exports.imageSearch = imageSearch;
+exports.randomImage = randomImage
