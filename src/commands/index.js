@@ -1,29 +1,13 @@
-require("dotenv").config();
-const imageSearch = require("image-search-google");
+const imageSearch = require("./imageSearch");
 
-const client = new imageSearch(process.env.CSE_ID, process.env.API_KEY);
-const options = { page: 1 };
-client
-  .search("Fernando Tatis Jr Padres", options)
-  .then(
-    (images) => console.log(images)
-    /*
-        [{
-            'url': item.link,
-            'thumbnail':item.image.thumbnailLink,
-            'snippet':item.title,
-            'context': item.image.contextLink
-        }]
-         */
-  )
-  .catch((error) => console.log(error));
-
-// search for certain size
-// client.search('Mahatma Gandhi', {size: 'large'});
-
-// search for certain type
-// client.search('Indira Gandhi', {type: 'face'});
-
-function handleMessage(message) {}
+function handleMessage(message) {
+  const stringMessage = message.toString();
+  const newMessage = stringMessage.substring(1);
+  if (stringMessage.startsWith("-") === true) {
+    if (newMessage === "tatis") {
+      imageSearch.imageSearch();
+    }
+  }
+}
 
 exports.handleMessage = handleMessage;
