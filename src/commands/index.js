@@ -23,3 +23,7 @@ client
 
 // search for certain type
 // client.search('Indira Gandhi', {type: 'face'});
+
+function handleMessage(message) {}
+
+exports.handleMessage = handleMessage;
