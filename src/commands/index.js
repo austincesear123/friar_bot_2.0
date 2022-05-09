@@ -5,7 +5,7 @@ function handleMessage(message) {
   const newMessage = stringMessage.substring(1);
   if (stringMessage.startsWith("-") === true) {
     if (newMessage === "tatis") {
-      randomImage.randomImage();
+      randomImage.randomImage(message);
     }
   }
 }
