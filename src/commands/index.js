@@ -2,7 +2,7 @@ const players = require("./players");
 const fetch = require("node-fetch");
 
 function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 async function handleMessage(message) {
@@ -20,6 +20,24 @@ async function handleMessage(message) {
           )
           .catch((error) => console.log(error));
       }
+    }
+    if (subStringMessage.slice(0, 6) === "upload") {
+      const messageArr = subStringMessage.split(" ", 3);
+      const dataBody = {
+        url: messageArr[2],
+        playerName: messageArr[1],
+      };
+      await fetch(`http://127.0.0.1:3000/friar_bot/upload`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataBody),
+      })
+        .then(() =>
+          message.channel.send(
+            `Image successfully uploaded for: ${messageArr[1]}`
+          )
+        )
+        .catch((error) => console.log(error));
     }
   }
 }
