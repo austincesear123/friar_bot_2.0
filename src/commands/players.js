@@ -25,6 +25,7 @@ const players = [
   "rogers",
   "snell",
   "suarez",
+  "tatis",
   "voit",
   "win",
 ];
