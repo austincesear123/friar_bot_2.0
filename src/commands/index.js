@@ -15,7 +15,7 @@ const helpEmbed = {
       "https://s.yimg.com/cv/apiv2/default/mlb/20200508/500x500/padres_wbgs.png",
   },
   description:
-    "How to upload an image:\n\n-upload `player name ('manny', 'crone', etc)` `image url`\nExample: '-upload manny https://exampleimageurl.jpg'",
+    "How to upload an image:\n-upload `player name ('manny', 'crone', etc)` `image url`\nExample: '-upload manny https://exampleimageurl.jpg'\n\n\n\nHow to delete an image:\n-delete `image ID#`\nExample: '-delete 628e6256bb5328993cb08365'",
   thumbnail: {
     url: "https://www.pinclipart.com/picdir/big/567-5676646_san-diego-padres-logo-2020-clipart.png",
   },
@@ -28,19 +28,19 @@ const helpEmbed = {
     {
       name: "Players:",
       value:
-        "-alfaro\n-azocar\n-cj\n-clevinger\n-crismatt\n-crone\n-dam\n-darvish\n-friar\n-ftd\n",
+        "-alfaro\n-azocar\n-bro\n-bunt\n-cano\n-cj\n-clevinger\n-crismatt\n-crone\n-daddy\n-dam\n-darvish\n-double\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-gore\n-grisham\n-hosmer\n-kim\n-lamet\n-lose\n-manaea\n-manny\n-martinez\n-musgrove\n",
+        "-fuck\n-friar\n-ftd\n-gore\n-grisham\n-homer\n-hosmer\n-kim\n-lamet\n-lose\n-manaea\n-manny\n-martinez\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-myers\n-nola\n-profar\n-rogers\n-snell\n-suarez\n-tatis\n-voit\n-win\n",
+        "-musgrove\n-myers\n-nice\n-nola\n-profar\n-rbi\n-rogers\n-snell\n-suarez\n-tatis\n-triple\n-voit\n-win\n",
       inline: true,
     },
     {
@@ -73,11 +73,11 @@ async function handleMessage(message) {
           .then((data) => {
             if (data.playerImgs.length > 0) {
               const imageEmbed = new MessageEmbed().setColor("GOLD");
-              imageEmbed.setImage(
-                `${
-                  data.playerImgs[randomInt(1, data.playerImgs.length) - 1].url
-                }`
-              );
+              const num = randomInt(1, data.playerImgs.length) - 1;
+              imageEmbed.setImage(`${data.playerImgs[num].url}`);
+              imageEmbed.setFooter({
+                text: `ID: ${data.playerImgs[num]._id}, uploaded by ${data.playerImgs[num].user}`,
+              });
               message.channel.send({ embeds: [imageEmbed] });
             } else {
               const imageEmbed = new MessageEmbed().setColor("GOLD");
@@ -93,27 +93,108 @@ async function handleMessage(message) {
 
     if (subStringMessage.slice(0, 6) === "upload") {
       const messageArr = subStringMessage.split(" ", 3);
-      const dataBody = {
-        url: messageArr[2],
-        playerName: messageArr[1],
-      };
-      await fetch(`http://127.0.0.1:3000/friar_bot/upload`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataBody),
-      })
-        .then(() => {
-          const uploadEmbed = new MessageEmbed().setColor("GOLD");
-          uploadEmbed.setDescription(
-            `Image successfully uploaded for: ${messageArr[1]}`
-          );
-          message.channel.send({ embeds: [uploadEmbed] });
+      if (players.players.includes(messageArr[1])) {
+        const dataBody = {
+          url: messageArr[2],
+          playerName: messageArr[1],
+          user: message.author.username,
+        };
+        await fetch(`http://127.0.0.1:3000/friar_bot/upload`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataBody),
         })
-        .catch((error) => console.log(error));
+          .then((res) => res.json())
+          .then((data) => {
+            const uploadEmbed = new MessageEmbed().setColor("GOLD");
+            uploadEmbed.setDescription(
+              `Image successfully uploaded for: ${messageArr[1]}, ID: ${data.player._id}`
+            );
+            message.channel.send({ embeds: [uploadEmbed] });
+          })
+          .catch((error) => {
+            console.log(error);
+            const imageEmbed = new MessageEmbed().setColor("GOLD");
+            imageEmbed.setDescription(
+              "There was an error uploading your image"
+            );
+            message.channel.send({ embeds: [imageEmbed] });
+          });
+      } else {
+        const imageEmbed = new MessageEmbed().setColor("GOLD");
+        imageEmbed.setDescription(
+          `${messageArr[1]} is not an available command`
+        );
+        message.channel.send({ embeds: [imageEmbed] });
+      }
     }
 
     if (subStringMessage === "help") {
       getHelp(message);
+    }
+
+    if (subStringMessage.slice(0, 6) === "delete") {
+      const messageArr = subStringMessage.split(" ", 2);
+      const id = messageArr[1];
+      let validId;
+      let key;
+      let playerName;
+      let user;
+      await fetch(`http://127.0.0.1:3000/friar_bot/id/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.img === null) {
+            validId = false;
+            const imageEmbed = new MessageEmbed().setColor("GOLD");
+            imageEmbed.setDescription("Image ID not found");
+            message.channel.send({ embeds: [imageEmbed] });
+          } else {
+            validId = true;
+            const sliceIndex = data.img.url.lastIndexOf("/") + 1;
+            key = data.img.url.slice(sliceIndex);
+            playerName = data.img.playerName;
+            user = data.img.user;
+          }
+        })
+        .catch((error) => console.log(error));
+      if (validId) {
+        if (user === message.author.username || user === undefined) {
+          const dataBody = {
+            id: id,
+            playerName: playerName,
+            key: key,
+          };
+          await fetch("http://127.0.0.1:3000/friar_bot/delete", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dataBody),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.status === 200) {
+                const imageEmbed = new MessageEmbed().setColor("GOLD");
+                imageEmbed.setDescription(
+                  `Image ID# ${id} for ${playerName} successfully deleted`
+                );
+                message.channel.send({ embeds: [imageEmbed] });
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+              const imageEmbed = new MessageEmbed().setColor("GOLD");
+              imageEmbed.setDescription(
+                "There was an error trying to delete your image"
+              );
+              message.channel.send({ embeds: [imageEmbed] });
+            });
+        } else {
+          const imageEmbed = new MessageEmbed().setColor("GOLD");
+          imageEmbed.setDescription(
+            "Images can only be deleted by the same user that uploaded them"
+          );
+          message.channel.send({ embeds: [imageEmbed] });
+        }
+      }
     }
   }
 }
