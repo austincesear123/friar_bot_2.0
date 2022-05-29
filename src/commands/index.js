@@ -1,6 +1,8 @@
 const players = require("./players");
 const fetch = require("node-fetch");
 const { MessageEmbed } = require("discord.js");
+require("dotenv").config();
+const API_URL = process.env.API_URL
 
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -68,7 +70,7 @@ async function handleMessage(message) {
   if (stringMessage.startsWith("-")) {
     for (i = 0; i < players.players.length; i++) {
       if (players.players[i] === subStringMessage) {
-        await fetch(`http://127.0.0.1:3000/friar_bot/get/${players.players[i]}`)
+        await fetch(`${API_URL}/friar_bot/get/${players.players[i]}`)
           .then((res) => res.json())
           .then((data) => {
             if (data.playerImgs.length > 0) {
@@ -99,7 +101,7 @@ async function handleMessage(message) {
           playerName: messageArr[1],
           user: message.author.username,
         };
-        await fetch(`http://127.0.0.1:3000/friar_bot/upload`, {
+        await fetch(`${API_URL}/friar_bot/upload`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(dataBody),
@@ -140,7 +142,7 @@ async function handleMessage(message) {
       let key;
       let playerName;
       let user;
-      await fetch(`http://127.0.0.1:3000/friar_bot/id/${id}`)
+      await fetch(`${API_URL}/friar_bot/id/${id}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.img === null) {
@@ -164,7 +166,7 @@ async function handleMessage(message) {
             playerName: playerName,
             key: key,
           };
-          await fetch("http://127.0.0.1:3000/friar_bot/delete", {
+          await fetch(`${API_URL}/friar_bot/delete`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataBody),
