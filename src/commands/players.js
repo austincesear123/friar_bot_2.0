@@ -1,15 +1,15 @@
 const players = [
   "azocar",
-  "bogaerts",
   "bro",
   "bunt",
-  "campusano",
+  "campy",
   "carp",
   "crismatt",
   "crone",
   "cruz",
   "daddy",
   "dam",
+  "danny",
   "darvish",
   "double",
   "fuck",
@@ -39,7 +39,8 @@ const players = [
   "wacha",
   "weathers",
   "wilson",
-  "win"
+  "win",
+  "xan"
 ];
 
 exports.players = players;
