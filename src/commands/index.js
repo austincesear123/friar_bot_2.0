@@ -30,19 +30,19 @@ const helpEmbed = {
     {
       name: "Players:",
       value:
-        "-alfaro\n-azocar\n-bro\n-bunt\n-cano\n-cj\n-clevinger\n-crismatt\n-crone\n-daddy\n-dam\n-darvish\n-double\n",
+        "-azocar\n-bogaerts\n-bro\n-bunt\n-campusano\n-carp\n-crismatt\n-crone\n-cruz\n-daddy\n-dam\n-darvish\n-double\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-fuck\n-friar\n-ftd\n-gore\n-grisham\n-homer\n-hosmer\n-kim\n-lamet\n-lose\n-manaea\n-manny\n-martinez\n",
+        "-friar\n-ftd\n-fuck\n-garcia\n-grisham\n-hader\n-hill\n-honeywell\n-homer\n-kim\n-lose\n-lugo\n-manny\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-musgrove\n-myers\n-nice\n-nola\n-profar\n-rbi\n-rogers\n-snell\n-suarez\n-tatis\n-triple\n-voit\n-win\n",
+        "-martinez\n-musgrove\n-nice\n-nola\n-rbi\n-snell\n-soto\n-suarez\n-tatis\n-triple\n-wacha\n-wilson\n-win\n",
       inline: true,
     },
     {
@@ -52,7 +52,7 @@ const helpEmbed = {
     },
   ],
   footer: {
-    text: "Developed by austincesear123, 2022",
+    text: "Developed by austincesear123, 2023",
   },
 };
 
