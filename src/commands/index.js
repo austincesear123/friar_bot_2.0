@@ -30,7 +30,7 @@ const helpEmbed = {
     {
       name: "Players:",
       value:
-        "-azocar\-barlow\n-bro\n-bunt\n-campy\n-carp\n-cooper\n-crismatt\n-crone\n-cruz\n-daddy\n-dam\n-darvish\n-dick\n-double\n",
+        "-azocar\n-barlow\n-bro\n-bunt\n-campy\n-carp\n-cooper\n-crismatt\n-crone\n-cruz\n-daddy\n-dam\n-darvish\n-dick\n-double\n",
       inline: true,
     },
     {
