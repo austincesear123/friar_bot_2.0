@@ -30,19 +30,19 @@ const helpEmbed = {
     {
       name: "Players:",
       value:
-        "-azocar\n-barlow\n-bro\n-bunt\n-campy\n-carp\n-cooper\n-crismatt\n-crone\n-cruz\n-daddy\n-dam\n-darvish\n-dick\n-double\n",
+        "-avila\n-azocar\n-brito\n-bro\n-bunt\n-campy\n-cease\n-cosgrove\n-crone\n-daddy\n-dam\n-darvish\n-double\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-friar\n-ftd\n-fuck\n-garcia\n-gary\n-gman\n-grisham\n-hader\n-hill\n-honeywell\n-homer\n-kim\n-lose\n-lugo\n-manny\n",
+        "-friar\n-ftd\n-fuck\n-higgy\n-homer\n-kim\n-king\n-kolek\n-lose\n-manny\n-merrill\n-musgrove\n-nice\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-martinez\n-musgrove\n-nice\n-nola\n-rbi\n-reynolds\n-snell\n-soto\n-suarez\n-tatis\n-triple\n-wacha\n-wilson\n-win\n-xan\n",
+        "-pauley\n-profar\n-rosario\n-rbi\n-santos\n-suarez\n-tatis\n-triple\n-wade\n-waldron\n-wandy\n-win\n-xan\n-yuki\n",
       inline: true,
     },
     {
