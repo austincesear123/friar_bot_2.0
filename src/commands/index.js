@@ -30,19 +30,19 @@ const helpEmbed = {
     {
       name: "Players:",
       value:
-        "-avila\n-azocar\n-brito\n-bro\n-bunt\n-campy\n-cease\n-cosgrove\n-crone\n-daddy\n-dam\n-darvish\n-double\n",
+        "-arraez\n-avila\n-azocar\n-brito\n-bro\n-bunt\n-campy\n-cease\n-cosgrove\n-crone\n-daddy\n-dam\n-darvish\n-double\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-friar\n-ftd\n-fuck\n-higgy\n-homer\n-kim\n-king\n-kolek\n-lose\n-manny\n-merrill\n-musgrove\n-nice\n",
+        "-friar\n-ftd\n-fuck\n-higgy\n-homer\n-kim\n-king\n-kolek\n-lose\n-manny\n-merrill\n-musgrove\n-nice\n-pauley\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-pauley\n-profar\n-rosario\n-rbi\n-santos\n-suarez\n-tatis\n-triple\n-wade\n-waldron\n-wandy\n-win\n-xan\n-yuki\n",
+        "-profar\n-rosario\n-rbi\n-santos\n-solano\n-suarez\n-tatis\n-triple\n-wade\n-waldron\n-wandy\n-win\n-xan\n-yuki\n",
       inline: true,
     },
     {
@@ -52,7 +52,7 @@ const helpEmbed = {
     },
   ],
   footer: {
-    text: "Developed by austincesear123, 2023",
+    text: "Developed by austincesear123, 2024",
   },
 };
 

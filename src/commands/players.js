@@ -1,4 +1,5 @@
 const players = [
+  "arraez",
   "avila",
   "azocar",
   "brito",
@@ -31,6 +32,7 @@ const players = [
   "rosario",
   "rbi",
   "santos",
+  "solano",
   "suarez",
   "tatis",
   "triple",
