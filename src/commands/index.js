@@ -30,19 +30,19 @@ const helpEmbed = {
     {
       name: "Players:",
       value:
-        "-adam\n-arraez\n-avila\n-azocar\n-brito\n-bro\n-bunt\n-campy\n-cease\n-cosgrove\n-crone\n-daddy\n-dam\n-darvish\n-double\n-estrada\n-friar\n",
+        "-adam\n-arraez\n-brito\n-bro\n-bunt\n-campy\n-cease\n-cosgrove\n-crone\n-cruz\n-daddy\n-dam\n-darvish\n-diaz\n-double\n-estrada\n-friar\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-ftd\n-fuck\n-hoe\n-higgy\n-homer\n-jacob\n-kim\n-king\n-kolek\n-lose\n-manny\n-merrill\n-morejon\n-musgrove\n-nice\n-peralta\n-perez\n",
+        "-ftd\n-fuck\n-hart\n-heyward\n-hoe\n-homer\n-jacob\n-king\n-kolek\n-lockridge\n-lose\n-maldonado\n-manny\n-merrill\n-morejon\n-musgrove\n-nice\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-pauley\n-profar\n-rosario\n-rbi\n-santos\n-scott\n-solano\n-suarez\n-tatis\n-triple\n-wade\n-waldron\n-wandy\n-win\n-xan\n-yuki\n",
+        "-omg\n-pivetta\n-reynolds\n-rosario\n-rbi\n-sheets\n-suarez\n-tatis\n-triple\n-vasquez\n-wade\n-waldron\n-wandy\n-win\n-xan\n-yuki\n-yuli\n",
       inline: true,
     },
     {
@@ -52,7 +52,7 @@ const helpEmbed = {
     },
   ],
   footer: {
-    text: "Developed by austincesear123, 2024",
+    text: "Developed by austincesear123, 2025",
   },
 };
 
