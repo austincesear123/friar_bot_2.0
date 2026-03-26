@@ -36,7 +36,7 @@ const helpEmbed = {
     {
       name: "\u200b",
       value:
-        "-friar\n-ftd\n-fuck\n-hart\n-hoe\n-homer\n-jacob\n-jar\-johnson\n-king\n-laureano\n-lose\n-manny\n-marquez\n-merrill\n-miller\n-morejon\n-morgan\n",
+        "-friar\n-ftd\n-fuck\n-hart\n-hoe\n-homer\n-jacob\n-jar\n-johnson\n-king\n-laureano\n-lose\n-manny\n-marquez\n-merrill\n-miller\n-morejon\n-morgan\n",
       inline: true,
     },
     {
