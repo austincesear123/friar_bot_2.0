@@ -30,19 +30,19 @@ const helpEmbed = {
     {
       name: "Players:",
       value:
-        "-adam\n-bradgley\n-brito\n-bro\n-buehler\n-bunt\n-campy\n-can\n-casty\n-crone\n-cruz\n-daddy\n-dam\n-darvish\n-double\n-estrada\n-france\n-friar\n",
+        "-adam\n-bradgley\n-brito\n-bro\n-buehler\n-bunt\n-campy\n-can\n-casty\n-crone\n-cruz\n-daddy\n-dam\n-darvish\n-double\n-estrada\n-fermin\n-france\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-ftd\n-fuck\n-hart\n-hoe\n-homer\n-jacob\n-jar\n-king\n-laureano\n-lose\n-manny\n-marquez\n-merrill\n-miller\n-morejon\n-morgan\n-musgrove\n-nice\n",
+        "-friar\n-ftd\n-fuck\n-hart\n-hoe\n-homer\n-jacob\n-jar\-johnson\n-king\n-laureano\n-lose\n-manny\n-marquez\n-merrill\n-miller\n-morejon\n-morgan\n",
       inline: true,
     },
     {
       name: "\u200b",
       value:
-        "-pivetta\n-prophecy\n-rbi\n-ron\n-sears\n-sheets\n-song\n-tatis\n-triple\n-vasquez\n-wagner\n-waldron\n-wandy\n-win\n-xan\n-yuki\n",
+        "-musgrove\n-nice\n-pivetta\n-prophecy\n-rbi\n-ron\n-sears\n-sheets\n-song\n-tatis\n-triple\n-vasquez\n-wagner\n-waldron\n-wandy\n-win\n-xan\n-yuki\n",
       inline: true,
     },
     {
